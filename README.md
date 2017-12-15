@@ -13,7 +13,10 @@ Navigation Structure
     -TabTwo
 ```
 
-**Demo**
+### Note
+- Code is based on (React Navigation with Complete Redux State Management Tab Bar)[https://codeburst.io/react-navigation-with-complete-redux-state-management-tab-bar-and-multiple-navigators-ed30a69d9a4d]
+
+### Demo
 ![demo](http://g.recordit.co/wbSU0QE1T2.gif)
 
 **To run the app**
