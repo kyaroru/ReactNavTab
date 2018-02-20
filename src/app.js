@@ -11,8 +11,8 @@ import {
 import Actions from 'actions';
 import { NavigationActions } from 'react-navigation';
 import Spinner from 'common/Spinner';
-import RootNavigator from './components/navigator';
-import TabBar from './components/tabBar';
+import RootNavigator from 'navigator/root';
+import TabBar from 'navigator/tabBar';
 
 class App extends Component {
   constructor() {
@@ -40,7 +40,7 @@ class App extends Component {
         if (tab.index !== 0) {
           const lastIndex = tab.routes.length - 1;
           const { key } = tab.routes[lastIndex];
-          goBackFromTab(currentTabKey, key);
+          goBackFromTab(currentTabIndex, key);
           return true;
         } else if (currentTabKey !== 'TabOne') {
           jumpToTab(0);
@@ -99,8 +99,11 @@ App.defaultProps = {
 const mapStateToProps = store => ({
   token: Actions.getToken(store),
   isRehydrated: Actions.isStoreRehydrated(store),
-  tabBar: store.tabBar,
-  rootNavigation: store.navigation,
+  tabBar: Actions.getTabBarNavigation(store),
+  rootNavigation: Actions.getRootNavigation(store),
+  TabOne: Actions.getTabOneNavigation(store),
+  TabTwo: Actions.getTabTwoNavigation(store),
+  TabThree: Actions.getTabThreeNavigation(store),
 });
 
 const mapDispatchToProps = dispatch => ({

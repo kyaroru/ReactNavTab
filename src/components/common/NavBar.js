@@ -88,14 +88,12 @@ const styles = StyleSheet.create({
 NavBar.propTypes = {
   title: PropTypes.string.isRequired,
   rightIcon: PropTypes.string,
-  leftIcon: PropTypes.string,
   onRightIconPressed: PropTypes.func,
   onLeftIconPressed: PropTypes.func,
 };
 
 NavBar.defaultProps = {
   rightIcon: null,
-  leftIcon: null,
   onRightIconPressed: null,
   onLeftIconPressed: null,
 };

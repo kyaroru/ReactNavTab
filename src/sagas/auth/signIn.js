@@ -1,9 +1,16 @@
-import { takeLatest, all, fork, put } from 'redux-saga/effects';
+import { takeLatest, all, fork, put, call } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import Actions from 'actions';
+import { alert } from 'utils/alert';
 
 function* signIn({ credentials }) {
-  console.log('sign in');
-  yield put(Actions.signInSuccess('fake-token'));
+  if (credentials.username === 'username' && credentials.password === 'password') {
+    yield call(delay, 1000);
+    yield put(Actions.signInSuccess('fake-token'));
+  } else {
+    yield call(alert, 'Sign In Fail', 'Please enter username & password as shown in placeholder');
+    yield put(Actions.signInFail('Incorrect credentials'));
+  }
 }
 
 function* watchSignIn() {
