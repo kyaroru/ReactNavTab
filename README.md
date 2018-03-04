@@ -29,6 +29,6 @@ react-native run-ios
 react-native run-android
 ```
 
-**For example with DrawerNavigator (With Redux)
+**For example with DrawerNavigator (With Redux)**
 
 Refer to [ReactNavDrawerRedux](https://github.com/kyaroru/ReactNavDrawerRedux)
